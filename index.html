@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="centerBox">
+      <output class="songName"></output>
+      <div class="music-container">
+        <button>
+          <i class="fa-solid fa-backward" onclick="playPrevious(vidID)"></i>
+        </button>
+        <button>
+          <i class=" plbtn fa-solid fa-play" onclick="checkBtnState()"></i>
+        </button>
+        <button>
+          <i class=" fa-solid fa-forward" onclick="playNext(vidID)"></i>
+        </button>
+      </div>
+      <button id="openPopup">Credits</button>
+      <div class="progress-bar">
+        <div class="progress"></div>
+      </div>
+    </div>
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <h2>
+          Here are the links to the songs that are used within the app. I do not
+          own the songs and they belong to their respective artists and/or
+          youtube channels. The links lead to the respective youtube channel.
+        </h2>
+        <p>Click the button below to close the popup.</p>
+        <ol>
+          <li>First Song: https://www.youtube.com/watch?v=z-diRlyLGzo</li>
+          <li>
+            Second Song:
+            https://www.youtube.com/watch?v=K3B8-klo5xc&embeds_referring_euri=http%3A%2F%2F127.0.0.1%3A5500%2F&source_ve_path=OTY3MTQ&feature=emb_imp_woyt
+          </li>
+          <li>Third Song: https://www.youtube.com/watch?v=YxWlaYCA8MU</li>
+        </ol>
+        <button id="closePopup">Close</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <div id="player"></div>
+    <iframe
+      class="song1"
+      width="0"
+      height="0"
+      src="https://www.youtube.com/embed/z-diRlyLGzo"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/YxWlaYCA8MU"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/K3B8-klo5xc"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+  </body>
+</html>

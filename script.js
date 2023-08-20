@@ -1,4 +1,4 @@
-let videoReferences = ["z-diRlyLGzo", "K3B8-klo5xc", "YxWlaYCA8MU"];
+let videoReferences = ["z-diRlyLGzo", "K3B8-klo5xc", "YxWlaYCA8MU"];//stores youtube references to three songs that are used
 console.log(videoReferences[1]);
 let videoIdRef = videoReferences[0];
 console.log(videoReferences[0]);
@@ -84,9 +84,10 @@ function onPlayerReady(event) {
 //    the player should play for six seconds and then stop.
 var done = false;
 function onPlayerStateChange(event) {
-  if (event.data == YT.PlayerState.PLAYING && !done) {
-    setTimeout(stopVideo, 6000);
-    done = true;
+  //below code makes it so that next song plays (playNext()) when current song ends (event.data===YT.PlayerState.ENDED)
+  if(event.data===YT.PlayerState.ENDED)
+  {
+    playNext();
   }
 }
 function stopVideo() {
@@ -121,7 +122,7 @@ function offBtn() {
   player.pauseVideo();
 }
 //Function to play next song when user clicks next button.
-function playNext(vidID) {
+function playNext() {
   trackCount++;
   currentSong++;
   if (currentSong > videoReferences.length) {
@@ -151,7 +152,7 @@ function playNext(vidID) {
   });
 }
 //Function to play previous songs when user clicks the previous button
-function playPrevious(vidID) {
+function playPrevious() {
   trackCount--;
   currentSong--;
   if (currentSong < 1) {
@@ -189,6 +190,9 @@ function updateProgressBar() {
     const duration = player.getDuration();
     const progress = (currentTime / duration) * 100;
     progressBar.style.width = `${progress}%`;
+    
   }
+  
 }
 setInterval(updateProgressBar, 1000);
+

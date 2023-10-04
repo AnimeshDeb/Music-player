@@ -11,6 +11,7 @@ let isSeeking = false;
 const outputElement = document.querySelector(".songName");
 //Below code ensures that the credits display when the credits button is clicked and it closes when the close button is 
 //clicked.
+let autoplay=0;
 document.addEventListener("DOMContentLoaded", () => {
   const openPopupButton = document.getElementById("openPopup");
   const closePopupButton = document.getElementById("closePopup");
